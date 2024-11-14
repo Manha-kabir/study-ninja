@@ -8,7 +8,7 @@ from langchain.prompts import PromptTemplate
 import google.generativeai as genai
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
-from Homepage import upload_notes
+from Homepage import notes
 
 load_dotenv()
 gemini_api_key = st.secrets["GOOGLE_API_KEY"]
@@ -76,9 +76,9 @@ def main():
         st.session_state.raw_text_chatbot_2 = None
 
     st.subheader("Upload Your PDF's")
-    pdf_docs = upload_notes()
+    pdf_docs = notes.getvalue()
 
-    if st.button("Process PDF"):
+    if st.button("Arise!!!!"):
         if not pdf_docs:
             st.error("Please upload at least one PDF file.")
         else:

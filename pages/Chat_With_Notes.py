@@ -13,7 +13,7 @@ from Homepage import upload_notes
 
 #API Key Fetching
 load_dotenv()
-gemini_api_key = os.getenv("GOOGLE_API_KEY")
+gemini_api_key = st.secrets["GOOGLE_API_KEY"]
 if gemini_api_key is None:
     raise ValueError("GOOGLE_API_KEY not found in environment variables")
 genai.configure(api_key=gemini_api_key)
